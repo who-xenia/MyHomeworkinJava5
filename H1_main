@@ -1,0 +1,48 @@
+package h1;
+
+public class H2_main {
+
+	public static void main(String[] args) {
+	
+ 
+        int n = 1111; 
+        int digits = 0;
+        int[] a = new int[9];  
+
+        // Berechnen der Anzahl der Ziffern 
+        int temp = n;
+        if (temp == 0) {
+            digits = 1;  
+        } else {
+            while (temp > 0) {
+                digits++;
+                temp /= 10;  
+            }
+        }
+
+        // Jetzt speichern 
+        int index = 8;  
+        temp = n;
+        while (temp > 0) {
+            a[index] = temp % 10;  // Extrahiere die letzte Ziffer und speichere sie im Array
+            temp /= 10;  
+            index--;  
+        }
+
+        // Falls die Zahl k weniger als 9 Ziffern hat, füllt das Array die vorderen Zellen mit 0
+        // Dies wird automatisch durch die Initialisierung des Arrays mit 0 erreicht.
+
+        // Ausgabe der Anzahl der Ziffern
+        System.out.println("Anzahl der Ziffern: " + digits);
+
+        // Ausgabe des Arrays a (die Ziffern)
+        System.out.print("Array der Ziffern: ");
+        for (int i = 0; i < 9; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
+    }
+
+	
+
+}
